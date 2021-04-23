@@ -6,62 +6,7 @@
 
     <title>YouTube To Mp3 Converter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-                
-                
-        body {
-            background:  #191414;
-            font-family: Consolas, Courier, monospace;
-        }
-        
-        .mainlabel {
-            color: #411;
-            font-size: 60px;
-            text-shadow: 0 0 15px #411;
-            
-            position: relative;
-            padding-top:100px; 
-            text-align: center;
-        }
-        .glow {
-            color: #f00;
-            text-shadow: 0px 0px 10px #f00;
-        }
-
-        span {
-            display: inline-block;
-            padding: 0 10px;
-        }
-
-        .inputfield {
-            width: 21%;
-            height: 30px;
-            background: #111;
-            color:white;
-
-
-            border-style: solid;
-            border-width: 3px;
-            border-color: #f00;
-
-            
-        }
-
-        .btn {
-            background-color: #555555;
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-        .btn:hover {
-            background-color: #8c8c8c;
-        }
-
-        
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
@@ -75,43 +20,7 @@
         </form>
     </center>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
-        alphabet = new Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
-        letter_count = 0;
-        el = $("#loading");
-        word = el.html().trim();
-        finished = false;
-
-        el.html("");
-        for (var i = 0; i < word.length; i++) {
-        el.append("<span>"+word.charAt(i)+"</span>");
-        }
-
-        setTimeout(write, 75);
-        incrementer = setTimeout(inc, 500);
-
-        function write() {
-        for (var i = letter_count; i < word.length; i++) {
-            var c = Math.floor(Math.random() * 36);
-            $("span")[i].innerHTML = alphabet[c];
-        }
-        if (!finished) {
-            setTimeout(write, 75);
-        }
-        }
-
-        function inc() {
-        $("span")[letter_count].innerHTML = word[letter_count];
-        $("span:eq("+letter_count+")").addClass("glow");
-        letter_count++;
-        if (letter_count >= word.length) {
-            finished = true;
-            
-        } else {
-            setTimeout(inc, 500);
-        }
-        }
-    </script>
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
     
 </body>
 </html>
