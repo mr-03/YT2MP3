@@ -1,0 +1,49 @@
+body {
+    background:  #191414;
+    font-family: Consolas, Courier, monospace;
+}
+
+.mainlabel {
+    color: #411;
+    font-size: 60px;
+    text-shadow: 0 0 15px #411;
+    
+    position: relative;
+    padding-top:100px; 
+    text-align: center;
+}
+.glow {
+    color: #f00;
+    text-shadow: 0px 0px 10px #f00;
+}
+
+span {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.inputfield {
+    width: 21%;
+    height: 30px;
+    background: #111;
+    color:white;
+
+
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f00;
+
+    
+}
+
+.btn {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.btn:hover {
+    background-color: #8c8c8c;
+}
